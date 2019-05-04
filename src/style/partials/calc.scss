@@ -1,0 +1,222 @@
+.calc {
+  background: #F5FFFA;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+.tabs-link {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+
+  @media (max-width: 767px) {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 575px) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
+.tabs-link a {
+  font-weight: 500;
+  color: #000000;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .15s linear;
+  border-radius: 10px;
+  filter: grayscale(100%);
+
+  @media (max-width: 991px) {
+    font-size: 1em;
+    padding: 0 15px;
+  }
+  @media (max-width: 767px) {
+    width: 50%;
+  }
+  @media (max-width: 575px) {
+    width: 100%;
+  }
+}
+.tabs-link a.active {
+  background: #48C309;
+  border: 1px solid black;
+  color: #fff;
+  filter: grayscale(0);
+}
+
+.tabs-link a img {
+  width: 40px;
+  height: auto;
+  margin: 0 10px;
+  padding-bottom: 7px;
+}
+.content {
+  display:none;
+  padding:20px;
+}
+.content.active {
+  display:block;
+}
+
+ // LEFT BLOCK CALC
+
+.input label, .select label, .textarea label {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0 10px;
+  -webkit-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
+  text-align: left;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+.input label, .select label {
+  bottom: calc(100% - 5px);
+}
+.input .border, .select .border, .textarea .border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all .1s linear;
+  background: #48C309;
+}
+.input input:focus ~ .border, .select select:focus ~ .border {
+  width: 100%;
+}
+
+ // RIGHT BLOCK CALC
+
+.calc-block {
+  display: flex;
+  color: black;
+  -webkit-box-align: center;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @media (max-width: 575px) {
+    text-align: center;
+    width: 100%;
+  }
+}
+.calc-block .title {
+  font-size: 1.5em;
+  font-weight: 900;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.calc-block .title+div {
+  margin-left: 0;
+}
+.calc-block-item {
+  margin-left: 30px;
+  @media (max-width: 991px) {
+    width: 100%;
+    margin: 0;
+  }
+}
+.calc-block-item .price {
+  font-size: 1.125em;
+  font-weight: 500;
+  margin-bottom: 5px;
+  @media (max-width: 991px) {
+    float: left;
+  }
+  @media (max-width: 575px) {
+    float: none;
+    margin: 0;
+  }
+
+}
+.calc-block-item .price b {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #48C309;
+}
+.calc-block-item>span {
+  font-weight: 400;
+  color: #212529;
+
+  @media (max-width: 991px) {
+    float: right;
+    padding-right: 10px;
+  }
+  @media (max-width: 767px) {
+    font-size: 0.9em;
+  }
+  @media (max-width: 575px) {
+    float: none;
+    padding: 0;
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.tax-span {
+
+  @media (max-width: 991px) {
+    float: left !important;
+  }
+  @media (max-width: 575px) {
+    float: none !important;
+  }
+}
+
+
+.calc-block-item.item-progress {
+  margin: -60px 0 0 30px;
+
+  @media (max-width: 991px) {
+    margin: -175px 0 0 210px;
+  }
+}
+.calc-block-item.item-progress #progress {
+  position: relative;
+}
+.calc-block-item.item-progress #progress:before {
+  font-size: .6875em;
+  position: absolute;
+  top: -webkit-calc(50% + 5px);
+  top: calc(50% + 5px);
+  left: 0;
+  width: 100%;
+  padding: 0 15px;
+  content: 'от стоимости авто';
+  text-align: center;
+  color: gray;
+}
+.calc-block-item.item-progress #progress:after {
+  font-size: 1.5em;
+  font-weight: 900;
+  line-height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  content: "~" attr(data-percent) "%";
+  text-align: center;
+}
+.calc-block.small-number .calc-block-item .price b {
+  font-size: 1em;
+  color: gray;
+}

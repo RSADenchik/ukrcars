@@ -1,0 +1,190 @@
+// GothamProRegular font
+
+@font-face {
+  font-family: "GothamProRegular";
+  src: url("../fonts/GothamPro/GothamProRegular/GothamProRegular.ttf"); /* Safari, Android, iOS */
+  src: url("../fonts/GothamPro/GothamProRegular/GothamProRegular.eot#iefix") format("embedded-opentype"); /* IE6-IE8 */
+  src: url("../fonts/GothamPro/GothamProRegular/GothamProRegular.ttf") format("truetype"); /* Safari, Android, iOS */
+  src: url("../fonts/GothamPro/GothamProRegular/GothamProRegular.woff") format("woff"); /* Modern Browsers */
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*  Global Fonts   */
+
+$gotham-pro-regular: "GothamProRegular";
+
+
+html, body {
+  min-height: 100%;
+  color: white;
+  font-family: $gotham-pro-regular;
+}
+
+h2, h3 {
+  color: #6c757d;
+  font-size: 1.17em;
+  font-weight: bold;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  color: #fff;
+  font-size: 1em;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+label {
+  font-size: 0.95em;
+  color: black;
+}
+audio, canvas, video {
+  display: inline-block;
+}
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+input, select, textarea {
+  font-size: 1.5em;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 15px 10px;
+  -webkit-transition: all .1s linear;
+  -o-transition: all .1s linear;
+  transition: all .1s linear;
+  border: none;
+  border-bottom: 2px solid #d9d9d9;
+  outline: none;
+  background: none;
+}
+button, input {
+  line-height: normal;
+}
+
+.sale, .calc, .complete, .feature {
+  padding-bottom: 60px;
+}
+
+.input, .select, .textarea {
+  position: relative;
+}
+
+.btn-gray {
+  background: #808080;
+  &:hover {
+    background-color: #48C309;
+    box-shadow: 0 0 0 6px #ccc;
+  }
+}
+
+.btn {
+  background: #48c309;
+  border-radius: 50px;
+  border: 2px solid #262626;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-block;
+  padding: 13px 35px;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: none;
+  transition: all .10s linear;
+  white-space: nowrap;
+  &:hover {
+    box-shadow: 0 0 0 6px #ccc;
+    color: #fff;
+  }
+
+  @media (min-width:1200px) and (max-width:1199px) {
+    padding: 13px 20px;
+    font-size: 0.85rem;
+  }
+  @media (max-width:767px) {
+  padding: 10px;
+}
+
+  @media (max-width:991px) {
+    padding: 10px 15px;
+  }
+
+
+  @media (max-width:575px) {
+    font-size: 0.8rem;
+  }
+}
+
+.btn-close {
+  position: absolute;
+  right: 15px;
+}
+
+.input input:focus+label, .input input:valid+label, .input textarea:focus+label, .input textarea:valid+label,
+.select input:focus+label, .select input:valid+label, .select textarea:focus+label, .select textarea:valid+label,
+.textarea input:focus+label, .textarea input:valid+label, .textarea textarea:focus+label, .textarea textarea:valid+label {
+  bottom: calc(100% - 5px);
+}
+.input input, .input select, .input textarea, .select input, .select select,
+.select textarea, .textarea input, .textarea select, .textarea textarea {
+  margin-bottom: 45px;
+  resize: none;
+}
+
+
+.cars-title {
+  font-size: 1.875em;
+  font-weight: 300;
+  margin: 0;
+  padding: 90px 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #808080;
+
+  span {
+    font-weight: 900;
+    color: #48C309;
+  }
+
+  @media (min-width:1200px) and (max-width:1199px) {
+    font-size: 1.5em;
+  }
+  @media (max-width:991px) {
+    font-size: 1.5em;
+    padding: 60px 0;
+  }
+  @media (max-width:575px) {
+    font-size: 1.15em;
+  }
+}
+
+ #map {
+   height: 100%;
+ }
+
+
+@import "partials/header";
+@import "partials/navbar";
+@import "partials/slider";
+@import "partials/sale";
+@import "partials/consult";
+@import "partials/advantages";
+@import "partials/complete";
+@import "partials/feature";
+@import "partials/calc";
+@import "partials/mail";
+@import "partials/map";
+@import "partials/footer";
+@import "partials/modal";
+
+
+
+

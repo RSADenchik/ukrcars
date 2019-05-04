@@ -1,0 +1,665 @@
+<!doctype html>
+ <html lang="ru">
+    <head>
+        <title>ukrCars</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/libs/bootstrap.min.css" rel="stylesheet">
+        <link href="css/libs/slick.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="css/main.css" rel="stylesheet">
+
+
+    </head>
+
+    <body>
+
+        <!-- Modal -->
+        <div class="modal fade" id="pick-car" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+            <div class="modal-content">
+                <form class="send_form" action="" novalidate>
+                    <div class="modal-header mt-2 mb-2">
+                        <h5 class="modal-title" id="exampleModalLabel">Форма связи</h5>
+                        <button type="button" class="close btn-close m-0 p-0" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input">
+                            <input class="form-control" id="modal_name" name="price" type="text" required>
+                            <label for="modal_name">Имя</label>
+                        </div>
+                        <div class="input">
+                            <input class="form-control" id="modal_tel" type="tel" name="tel" required>
+                            <label for="modal_tel">Телефон</label>
+                        </div>
+                        <div class="textarea">
+                            <textarea class="form-control" id="modal_textarea" rows="2" required ></textarea>
+                            <label for="modal_textarea">Сообщение</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer mb-4">
+                        <button type="submit" class="btn">Отправить</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+        <header class="header">
+
+            <div class="header-top">
+
+                <div class="container">
+
+                    <div class="d-flex align-items-center">
+
+                        <a href="index.html" class="logo">
+                            <img class="logo-img" src="img/logo.svg" alt="logo">
+                        </a>
+
+                        <div class="header-top-contact d-none col-md-3 d-md-block">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a class="scrolling" href="#map">г. Киев, ул. Астраханская 3</a>
+                        </div>
+
+                        <span class="header-top-description"> Автомобили из Европы и Грузии <br> Покупка, доставка, оформление </span>
+
+                        <div class="header-top-contact">
+                            <i class="fas fa-phone"></i>
+                            <div class="d-inline-flex flex-column">
+                                <a href="tel:+380508346575">+ 38 (050) 834 65 75</a>
+                                <a href="tel:+380634536494">+ 38 (063) 453 64 94</a>
+                                <a href="tel:+380973047977">+ 38 (097) 304 79 77</a>
+                            </div>
+                        </div>
+
+                        <div class="header-top-social d-none d-sm-block">
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-telegram-plane"></i>
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <nav class="header-nav">
+                <div class="container">
+                        <div class="mob-nav">Меню</div>
+                        <ul class="nav">
+                            <li><a href="">Каталог машин</a></li>
+                            <li class="submenu"><span>Услуги</span><i class="fas fa-chevron-circle-down d-block d-md-none"></i>
+                                <ul class="submenu-ul">
+                                    <li><a href="">Контроль логистики</a></li>
+                                    <li><a href="">Доставка в любой город Украины</a></li>
+                                    <li><a href="">Помощь в таможенном оформлении</a></li>
+                                    <li><a href="">Помощь с СТО</a></li>
+                                    <li><a href="">Cертификация и постановка на учет</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="scrolling" href="#calc">Калькулятор растаможки</a></li>
+                            <li><a href="">Как купить</a></li>
+                            <li><a href="">Контакты</a></li>
+                            <li class="order-car-btn d-none d-md-block"><a href="" data-toggle="modal" data-target="#pick-car">Заказать авто</a></li>
+                        </ul>
+                </div>
+            </nav>
+        </header>
+
+        <section class="slider">
+            <div class="slider-title">
+                <div class="title">
+                    <h1>Покупай свой автомобиль выгодно</h1>
+                    <small>Доставка машин из Европы и Грузии</small>
+                </div>
+                <a class="btn" href="">Подобрать авто</a>
+            </div>
+
+            <div id="slider-header" class="slider-header">
+                <div class="slider-header-item">
+                    <img class="slider-header-item-img" src="img/1.jpg" alt="">
+                </div>
+                <div class="slider-header-item">
+                    <img class="slider-header-item-img" src="img/2.jpg" alt="">
+                </div>
+                <div class="slider-header-item">
+                    <img class="slider-header-item-img" src="img/3.jpg" alt="">
+                </div>
+            </div>
+            <div class="slider-nav"></div>
+        </section>
+
+        <section class="sale">
+            <div class="container">
+                <div class="cars-title"><span>Выбрать</span> автомобиль</div>
+                <div class="text-center">
+                    <img class="sale-img" src="img/sale.png" alt="">
+                </div>
+                <div class="text-center mt-4 mt-sm-5">
+                    <a href="catalog.html" class="btn btn-gray">Перейти в каталог</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="consult">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7 text-center">
+                        <h3 class="title mb-0">Нужна помощь в покупке авто?</h3>
+                        <p class="text-white">Получите бесплатную консультацию от опытных специалистов</p>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <a href="" class="btn" data-toggle="modal" data-target="#pick-car">Получить консультацию</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages">
+            <div class="container">
+                <div class="cars-title"><span>Преимущества</span> у авто с Европы или Грузии</div>
+                <div class="row">
+                    <div class="col-md-7 col-lg-4 order-lg-1">
+                        <div class="advantages-list text-lg-left">
+                            <div class="advantages-list-item">
+                                <div class="title">Cтоимость машины дешевле на 30-50%</div>
+                            </div>
+                            <div class="advantages-list-item">
+                                <div class="title">Подтвержденные пробеги</div>
+                            </div>
+                            <div class="advantages-list-item">
+                                <div class="title">Прозрачная история</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-lg-4 order-lg-3">
+                        <div class="advantages-list text-lg-right">
+                            <div class="advantages-list-item">
+                                <div class="title">Авто от страховых компаний</div>
+                            </div>
+                            <div class="advantages-list-item">
+                                <div class="title">Максимально широкий выбор</div>
+                            </div>
+                            <div class="advantages-list-item">
+                                <div class="title">Без пробега по Украине</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col order-lg-2 d-none d-md-flex justify-content-center align-items-center">
+                        <!--<img class="advantages-img" src="img/euro.png" alt="">-->
+                        <img class="advantages-img" src="img/usa-euro.jpg" alt="">
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <section class="complete">
+            <div class="container">
+                <div class="cars-title"><span>Привезенные</span> авто под заказ для клиентов</div>
+                <div id="slider-complete" class="complete-item-slider">
+                    <div class="complete-item">
+                        <div class="complete-item-img">
+                            <img src="img/complete-1.jpg" alt="">
+                        </div>
+                        <div class="complete-item-title"></div>
+                        <div class="row text-center p-4">
+                            <div class="col">
+                                <b>Mercedes-Benz</b>
+                                <div>Марка</div>
+                            </div>
+                            <div class="col">
+                                <b>2015</b>
+                                <div>Год</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="complete-item">
+                        <div class="complete-item-img">
+                            <img src="img/complete-2.jpg" alt="">
+                        </div>
+                        <div class="complete-item-title"></div>
+                        <div class="row text-center p-4">
+                            <div class="col">
+                                <b>Mercedes-Benz</b>
+                                <div>Марка</div>
+                            </div>
+                            <div class="col">
+                                <b>2015</b>
+                                <div>Год</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="complete-item">
+                        <div class="complete-item-img">
+                            <img src="img/complete-3.jpg" alt="">
+                        </div>
+                        <div class="complete-item-title"></div>
+                        <div class="row text-center p-4">
+                            <div class="col">
+                                <b>Mercedes-Benz</b>
+                                <div>Марка</div>
+                            </div>
+                            <div class="col">
+                                <b>2015</b>
+                                <div>Год</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="complete-item">
+                        <div class="complete-item-img">
+                            <img src="img/complete-4.jpg" alt="">
+                        </div>
+                        <div class="complete-item-title"></div>
+                        <div class="row text-center p-4">
+                            <div class="col">
+                                <b>Mercedes-Benz</b>
+                                <div>Марка</div>
+                            </div>
+                            <div class="col">
+                                <b>2015</b>
+                                <div>Год</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="complete-item">
+                        <div class="complete-item-img">
+                            <img src="img/complete-5.jpg" alt="">
+                        </div>
+                        <div class="complete-item-title"></div>
+                        <div class="row text-center p-4">
+                            <div class="col">
+                                <b>Mercedes-Benz</b>
+                                <div>Марка</div>
+                            </div>
+                            <div class="col">
+                                <b>2015</b>
+                                <div>Год</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="complete-item">
+                        <div class="complete-item-img">
+                            <img src="img/complete-6.jpg" alt="">
+                        </div>
+                        <div class="complete-item-title"></div>
+                        <div class="row text-center p-4">
+                            <div class="col">
+                                <b>Mercedes-Benz</b>
+                                <div>Марка</div>
+                            </div>
+                            <div class="col">
+                                <b>2015</b>
+                                <div>Год</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="complete-slider-nav mt-5 mb-5"></div>
+                <div class="text-center">
+                    <a href="" class="btn">Смотреть все</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature">
+            <div class="container">
+                <div class="cars-title"><span>Преимущества</span> работы с нами</div>
+                <div class="feature-list">
+                    <a href="" class="feature-list-item">
+                        <div class="icon">
+                            <img src="img/medal.svg" alt="">
+                        </div>
+                        <div class="title">Опыт работы <br> больше 3-х лет</div>
+                    </a>
+                    <a href="" class="feature-list-item">
+                        <div class="icon">
+                            <img src="img/certificate.svg" alt="">
+                        </div>
+                        <div class="title">Помощь с сертификацией, растаможкой, постановкой на учет</div>
+                    </a>
+                    <a href="" class="feature-list-item">
+                        <div class="icon">
+                            <img src="img/position.svg" alt="">
+                        </div>
+                        <div class="title">Выбор по логистике в порты Европы, Украины</div>
+                    </a>
+                    <a href="" class="feature-list-item">
+                        <div class="icon">
+                            <img src="img/transport.svg" alt="">
+                        </div>
+                        <div class="title">Доставка от <br> трех недель</div>
+                    </a>
+                    <a href="" class="feature-list-item">
+                        <div class="icon">
+                            <img src="img/anchor.svg" alt="">
+                        </div>
+                        <div class="title">Отправка машин из <br> 4-х портов США</div>
+                    </a>
+                    <a href="" class="feature-list-item">
+                        <div class="icon">
+                            <img src="img/time.svg" alt="">
+                        </div>
+                        <div class="title">Поддержка клиентов 24/7</div>
+                    </a>
+                    <a href="" class="feature-list-item">
+                        <div class="icon">
+                            <img src="img/pay.svg" alt="">
+                        </div>
+                        <div class="title">Полная прозрачность сделки</div>
+                    </a>
+                    <a href="" class="feature-list-item">
+                        <div class="icon">
+                            <img src="img/key.svg" alt="">
+                        </div>
+                        <div class="title">Экспертная оценка перед покупкой</div>
+                    </a>
+                </div>
+        </section>
+
+        <section id="calc" class="calc">
+            <div class="container">
+                <div class="cars-title pb-5"><span>Калькулятор</span> растаможки</div>
+                <div class="tabs-link">
+                    <a href="#" data-tab="1" class="tab active"><img src="img/car.png" alt="">Легковые</a>
+                    <a href="#" data-tab="2" class="tab"><img src="img/electro.png" alt="">Электро</a>
+                    <a href="#" data-tab="3" class="tab"><img src="img/track.png" alt="">Грузовые</a>
+                    <a href="#" data-tab="4" class="tab"><img src="img/moto.png" alt="">Мото</a>
+                </div>
+
+                <div class="row justify-content-center align-items-top">
+                    <div class="col-lg-6 col-sm-6">
+                        <div data-content="1" class="content active">
+                            <form id="euroblaha" class="row">
+                                <div class="col-lg-6">
+                                    <div class="input">
+                                        <input id="price5" name="price" type="number" value="8000" required>
+                                        <label for="price5">Цена авто, USD</label>
+                                        <div class="border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input">
+                                        <input id="vol5" name="vol" type="number" value="1300" required>
+                                        <label for="vol5">Объем двигателя</label>
+                                        <div class="border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input">
+                                        <input id="age5" name="age" type="number" value="5" required>
+                                        <label for="age5">Возраст автомобиля</label>
+                                        <div class="border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="select">
+                                        <select id="motor5" name="motor" class="mb-4">
+                                            <option value="1">Бензин</option>
+                                            <option value="2">Дизель</option>
+                                        </select>
+                                        <label for="motor5">Вид топлива</label>
+                                        <div class="border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn" type="submit">Рассчитать</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div data-content="2" class="content">
+                            <form id="electro-auto">
+                                <div class="input">
+                                    <input id="price-electro" name="price" type="number" value="8000" required>
+                                    <label for="price-electro">Цена авто, USD</label>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn" type="submit">Рассчитать</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div data-content="3" class="content">
+                            <form id="hard-drive" class="row">
+                                <div class="col-lg-12">
+                                    <div class="input">
+                                        <input id="price3" name="price" type="number" value="8000" required>
+                                        <label for="price3">Цена авто, USD</label>
+                                        <div class="border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input">
+                                        <input id="vol3" name="vol" type="number" value="1300" required>
+                                        <label for="vol3">Объем двигателя</label>
+                                        <div class="border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="select">
+                                        <select id="wieght" name="weight">
+                                            <option value="1">до 5 т.</option>
+                                            <option value="2">от 5 т. до 20 т.</option>
+                                            <option value="3">от 20 т.</option>
+                                        </select>
+                                        <label for="wieght">Грузоподъемность</label>
+                                        <div class="border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="select">
+                                        <select id="age3" name="age">
+                                            <option value="1">Новые</option>
+                                            <option value="2">Б/У до 5 лет</option>
+                                            <option value="3">Б/У от 5 до 8 лет</option>
+                                            <option value="4">Б/У от 8 лет</option>
+                                        </select>
+                                        <label for="age3">Возраст автомобиля</label>
+                                        <div class="border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="select">
+                                        <select id="motor3" name="motor">
+                                            <option value="1">Бензин</option>
+                                            <option value="2">Дизель</option>
+                                        </select>
+                                        <label for="motor3">Вид топлива</label>
+                                        <div class="border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn" type="submit">Рассчитать</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div data-content="4" class="content">
+                            <form id="moto">
+                                <div class="input">
+                                    <input id="price4" name="price-moto" type="number" value="8000" required>
+                                    <label for="price4">Цена мотоцикла, USD</label>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="input">
+                                    <input id="vol4" name="vol" type="number" value="500" required>
+                                    <label for="vol4">Объем двигателя</label>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn" type="submit">Рассчитать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col col-sm-6 col-xl-5 mt-sm-5 mt-lg-0">
+                        <div class="calc-block">
+                            <div class="title">Итого:</div>
+                            <div class="calc-block-item">
+                                <div class="price">
+                                    <b class="tax">0 USD</b>
+                                </div>
+                                <span class="tax-span">нужно заплатить на таможню</span>
+                            </div>
+                            <div class="calc-block-item item-progress d-none d-md-block">
+                                <div id="progress" data-percent="0"></div>
+                        </div>
+                        <div class="calc-block small-number mt-4">
+                            <div class="title">Из них:</div>
+                            <div class="calc-block-item">
+                                <div class="price">
+                                    <b class="poshlina">0 USD</b>
+                                </div>
+                                <span>пошлина</span>
+                            </div>
+                            <div class="calc-block-item">
+                                <div class="price">
+                                    <b class="aktsiz">0 USD</b>
+                                </div>
+                                <span>акциз</span>
+                            </div>
+                            <div class="calc-block-item">
+                                <div class="price">
+                                    <b class="nds">0 USD</b>
+                                </div>
+                                <span>НДС</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mail">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="cars-title">Остались вопросы?</div>
+                        <p>Мы поможем вам выгодно подобрать автомобиль! Обращайтесь по телефону или оставляйте заявку в форме:</p>
+                        <ul class="mt-md-4 mb-5 text-center text-md-left">
+                            <li class="mb-2">
+                                <h3 class="m-0">
+                                    <a href="tel:+380508346575">+ 38 (050) 834 65 75</a>
+                                </h3>
+                                <div class="text-secondary mt-md-2">Игорь</div>
+                            </li>
+                            <li class="mb-2">
+                                <h3 class="m-0">
+                                    <a href="tel:+380634536494">+ 38 (063) 453 64 94</a>
+                                </h3>
+                                <div class="text-secondary mt-md-2">Алексей</div>
+                            </li>
+                            <li class="mb-2">
+                                <h3 class="m-0">
+                                    <a href="tel:+380973047977">+ 38 (097) 304 79 77</a>
+                                </h3>
+                                <div class="text-secondary mt-md-2">Алексей</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col offset-xl-1">
+                        <form class="send_form mt-md-5" action="" novalidate>
+                            <div class="input">
+                                <input class="form-control" id="name" type="text" name="name" required>
+                                <label for="name">Имя</label>
+                            </div>
+                            <div class="input">
+                                <input class="form-control" id="tel" type="tel" name="tel" required>
+                                <label for="tel">Телефон</label>
+                            </div>
+                            <div class="input">
+                                <input class="form-control" id="email" type="email" name="email" required>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button id="button-form-send" class="btn btn-outline mt-2" type="submit">Отправить</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="gl-map" class="map">
+            <div id="map"></div>
+            <div class="map-title">
+                <div class="title">Карта проезда</div>
+                <span>Нажмите для просмотра</span>
+            </div>
+
+        </section>
+        <footer class="footer">
+            <div class="header-top">
+                <div class="container">
+                    <div class="d-flex align-items-center">
+                        <a href="index.html" class="logo">
+                            <img class="logo-img" src="img/logo.svg" alt="">
+                        </a>
+                        <div class="header-top-contact d-none col-md-3 d-md-block">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="#map">г. Киев, ул. Астраханская 3</a>
+                        </div>
+                        <span class="header-top-description"> Автомобили из Европы и Грузии <br> Покупка, доставка, оформление </span>
+                        <div class="header-top-contact">
+                            <i class="fas fa-phone"></i>
+                            <div class="d-inline-flex flex-column">
+                                <a href="tel:+380508346575">+ 38 (050) 834 65 75</a>
+                                <a href="tel:+380634536494">+ 38 (063) 453 64 94</a>
+                                <a href="tel:+380973047977">+ 38 (097) 304 79 77</a>
+                            </div>
+                        </div>
+
+                        <div class="header-top-social d-none d-sm-block">
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-telegram-plane"></i>
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="d-flex align-items-center justify-content-center flex-column flex-md-row">
+                        <div class="col-lg-6 text-center"><i class="far fa-copyright"></i> UkrCars 2019</div>
+                        <div class="col-lg-6 text-center">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@ukrcars.com.ua">info@ukrcars.com.ua</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/libs.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/validate.js"></script>
+        <script src="js/calc.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var map;
+            function initMap() {
+
+                var myLatLng = {lat:  50.436032, lng: 30.642806};
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: myLatLng,
+                    zoom: 14
+                });
+
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map
+                });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwnHgxD6zkCpMPsnCD6bqvVCHP2Ovx9i4&callback=initMap"
+                async defer></script>
+
+
+    </body>
+ </html>
